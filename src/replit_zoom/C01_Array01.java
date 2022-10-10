@@ -1,8 +1,8 @@
-package alistirma;
+package replit_zoom;
 
 import java.util.Arrays;
 
-public class A11_replitArray {
+public class C01_Array01 {
   /*  Karışık verilen sayıları ve kelimeleri sıralayan Java kodunun yazınız.
 
             not: Test datadaki değerleri kullanınız.
@@ -27,5 +27,6 @@ public class A11_replitArray {
       Arrays.sort(arr1);
 
       System.out.println(Arrays.toString(arr)+"\n"+Arrays.toString(arr1));
+
   }
 }

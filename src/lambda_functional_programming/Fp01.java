@@ -49,6 +49,7 @@ public class Fp01 {
         getYedidenBuyukCiftMin(liste);
         getYedidenBuyukCiftMin2(liste);
         getYedidenBuyukCiftMin3(liste);
+        getTersSiralamaylaTekrarsizElemanlarinYarisi(liste);
 
     }
     //1) Ardışık list elementlerini aynı satırda aralarında boşluk bırakarak yazdıran bir method oluşturun.(Structured)
@@ -120,10 +121,10 @@ public class Fp01 {
     public static void getMaxEleman01(List<Integer>list){
 
 
-        Integer max=list.stream().distinct().reduce(Integer.MIN_VALUE,(t,u)-> t>u ? t:u);
+       // Integer max=list.stream().distinct().reduce(Integer.MIN_VALUE,(t,u)-> t>u ? t:u);
       //  list.stream().reduce(list.get(0),(t,u)-> t>u ? t :u); get methodu ile de yapilabilir
-
-        System.out.println(max);
+     Integer max=list.stream().distinct().reduce((t,u)-> t>u ? t:u).get();
+        System.out.println("Max 7  :"+max);
 
     }
 
@@ -206,9 +207,9 @@ public class Fp01 {
     //10) Ters sıralama ile tekrarsız ve 5'ten büyük elemanların yarı değerlerini(elamanın ikiye bölüm sonucunu) bulan bir method oluşturun.
 
     public static void getTersSiralamaylaTekrarsizElemanlarinYarisi(List<Integer> list){
-
+                                                                        // double yapmak icin double boldük
         List<Double> sonuc =  list.stream().distinct().filter(t-> t>5).map(t->t/2.0).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-
+                                                                                                       // list conteyner ina koymak icin bu methodu kullandik
         System.out.println(sonuc);
 
     }
